@@ -22,41 +22,101 @@
 | 实现配套 | 给出与公式一一对应的最小可运行代码，变量名与符号名一致 |
 | 交付方式 | **Markdown 是唯一源文件**；PDF／HTML 只是可选、可再生的最后一步 |
 
-## 安装
+## 安装（社区用户）
 
-技能目录名必须与 `SKILL.md` 里 frontmatter 的 `name` 一致（本仓库为 `tutorial-writing-skill`），否则技能会静默加载失败。
+三种方式任选。装完在 Chat 输入 `/skills`，列表里应出现 `tutorial-writing-skill`。
+
+### 方式一：VS Code 内直接安装（实验特性）
+
+1. 启用设置 `chat.customizations.marketplace.enabled`。
+2. 打开 Agent Customizations 编辑器（命令面板运行 **Chat: Open Customizations**，或在 Chat 输入框输入 `/skills`），切到 **Discover**。
+3. 来源选 **GitHub Feed**，搜索 `tutorial-writing-skill`（可加 `@type:skill` 过滤技能类条目）。
+4. 点 **Install**，选择装到个人技能目录还是当前工作区。
+
+### 方式二：命令行克隆（推荐，跨 agent 通用）
 
 ```bash
-# 个人级（所有项目可用）
-git clone https://github.com/zcxAcSg/tutorial-writing-skill ~/.copilot/skills/tutorial-writing-skill
+# 个人级：本机所有项目可用
+git clone https://github.com/AcSg999/tutorial-writing-skill.git ~/.copilot/skills/tutorial-writing-skill
 
-# 或项目级（随仓库共享给团队）
-git clone https://github.com/zcxAcSg/tutorial-writing-skill <项目>/.github/skills/tutorial-writing-skill
+# 项目级：随项目分发给团队
+git clone https://github.com/AcSg999/tutorial-writing-skill.git .github/skills/tutorial-writing-skill
+
+# 项目级 + 便于后续更新：作为 submodule 引入
+git submodule add https://github.com/AcSg999/tutorial-writing-skill.git .github/skills/tutorial-writing-skill
 ```
 
-VS Code 支持的技能目录：工作区 `.github/skills/`、`.claude/skills/`、`.agents/skills/`；个人 `~/.copilot/skills/`、`~/.claude/skills/`、`~/.agents/skills/`。
+Windows PowerShell 对应写法：
+
+```powershell
+git clone https://github.com/AcSg999/tutorial-writing-skill.git "$env:USERPROFILE\.copilot\skills\tutorial-writing-skill"
+```
+
+### 方式三：下载 ZIP（不用 git）
+
+仓库页面 **Code → Download ZIP**，解压到任意技能目录。**记得把解压出的 `tutorial-writing-skill-main` 改名为 `tutorial-writing-skill`**：目录名必须与 `SKILL.md` 里 `name` 字段完全一致，否则技能会静默加载失败——不报错，只是不出现。
+
+### 支持的技能目录
+
+| 范围 | 目录 | 说明 |
+| --- | --- | --- |
+| 工作区级 | `.github/skills/`、`.claude/skills/`、`.agents/skills/` | 随项目分发；monorepo 中可能需要开启 `chat.useCustomizationsInParentRepositories` 才能发现父仓库根目录的技能 |
+| 个人级 | `~/.copilot/skills/`、`~/.claude/skills/`、`~/.agents/skills/` | 本机所有项目可用 |
+
+Agent Skills 是开放标准，同一份目录可以给 VS Code Copilot、GitHub Copilot CLI、Claude Code 等支持该标准的 agent 复用；各 agent 支持的目录与可选特性略有差异（例如 Codex 会在首次提问前发现 `.github/skills/`，并原生支持 `.agents/skills/`）。调整技能目录后，建议重载窗口或新开一个对话。
+
+### 安装校验
+
+Chat 输入框键入 `/skills` 打开 **Configure Skills** 菜单，看到 `tutorial-writing-skill` 即安装成功；随后提出一个写作需求，技能会在相关时自动加载，不必手动点名。
 
 ## 使用
 
-在 Copilot Chat 中提出写作任务即可（技能会在相关时自动加载），例如：
+**① 写新的讲义**
 
-- 「用 tutorial-writing-skill 写一篇 `XX` 的详细推导讲义」
-- 「把这份草稿按讲义规范重排结构，补上动机与总结」
-- 「检查这篇文档是否符合讲义规范：结构、公式排版、总结」
+```
+写一篇关于〈主题〉的详细推导讲义，按 tutorial-writing-skill 的规范来：
+从〈数学起点〉讲到〈最终目标〉，包含动机、完整推导、最小可运行实现和总结。
+```
+
+**② 改已有稿子**
+
+```
+按讲义规范重排这篇文档：补上核心问题、每节的动机与结论、缺失的名词衔接，
+并检查推导是否有跳步、公式是否有说不清来源的等号。
+```
+
+**③ 给文档做体检**
+
+```
+检查这篇文档是否符合同一套规范：公式正确性、推导是否简洁易懂、
+名词是否串联、每个结论是否回答了"为了解决什么，得到了什么"。
+```
+
+**④ 校验公式能否正确渲染**（可选，只依赖一个 devDependency）
+
+```bash
+npm install
+npm run verify                        # 校验仓库内所有 Markdown
+node scripts/verify-math.mjs 讲义.md   # 只校验某个文件
+```
+
+需要 PDF 时，**最后一步**再从 Markdown 导出（Pandoc、Quarto、`md-to-pdf`、VS Code 的 Markdown PDF 扩展等）。永远不要编辑 PDF 后在它上面继续迭代——那会让 Markdown 失去唯一源文件的地位。
 
 ## 仓库结构
 
 ```
-SKILL.md                          技能主文件：风格信条、文档骨架、写作流程、检查清单、反模式
+SKILL.md                          技能主文件：三条优先级、结论句式、名词串联、默认骨架、写作流程、自查
+package.json                      npm run verify（只依赖 katex）
 examples/
-  skeleton-template.md            可直接复制的空骨架（占位符用 〈…〉 标注）
+  skeleton-template.md            可直接复制的空骨架（占位符用 〈…〉 标注，可裁剪）
   screenshots/
     01-document-structure.png     骨架渲染效果：元信息、核心问题、阅读路线、章节开头
-    02-math-layout.png            骨架渲染效果：多行推导、框选结论、编号公式、对照表
+    02-math-layout.png            骨架渲染效果：多行推导、框选结论、编号公式
 reference/
-  math-and-markdown.md            公式与排版细则、KaTeX 实测矩阵、渲染自检方法
+  math-and-markdown.md            公式与排版细则、KaTeX 实测矩阵、跨平台差异、渲染自检方法
 scripts/
   verify-math.mjs                 公式渲染校验器（提交前／CI 均可运行）
+LICENSE                           MIT
 ```
 
 ## 公式校验脚本
@@ -78,6 +138,20 @@ node scripts/verify-math.mjs 某篇讲义.md   # 也可以只查单个文件
 ![公式排版](examples/screenshots/02-math-layout.png)
 
 截图由骨架模板本身渲染得到（KaTeX，1.5x 缩放），因此展示的就是实际排版效果。
+
+## 常见问题
+
+**技能装好了却没生效？** 九成是目录名与 `SKILL.md` 里的 `name` 不一致（必须是 `tutorial-writing-skill`：全小写、连字符）；其次是把目录放错了位置（见上方支持目录表）。改完目录后重载窗口或新开一个对话。
+
+**公式在 GitHub 上和本地预览不一样？** 两个平台渲染器不同（GitHub 用 MathJax，VS Code 预览用 KaTeX）。[公式细则](reference/math-and-markdown.md)里列出了实测差异，最典型的三个：`$$` 内的裸 `\\` 换行在 KaTeX 下不生效、`\(…\)` 定界符不被 Markdown 识别、`\ce{}`／`\SI{}` 这类扩展宏不可用。跑 `npm run verify` 可以一次性查出这些写法。
+
+**一定要按这套骨架写吗？** 不必。骨架是默认起点，可以裁剪、合并、调序；真正要守住的是三条优先级，以及 KaTeX ∩ MathJax 的公式写法。
+
+**只想用校验脚本、不想装技能？** 直接把 `scripts/verify-math.mjs`（和 `package.json`）拷进你的文档仓库即可，它的唯一依赖是 `katex`。
+
+## 反馈与贡献
+
+规范本身有问题（例如某条公式建议在某个平台不成立）、或者想补充新的排版规则，欢迎开 Issue 或 PR——附上最小可复现的 Markdown 片段最有帮助。本仓库 MIT 许可，可自由 fork、改名、改成自己领域的风格。
 
 ## 许可
 
