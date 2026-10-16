@@ -2,7 +2,16 @@
   "name": "tutorial-writing-skill",
   "version": "1.0.0",
   "private": true,
-  "description": "VS Code Copilot skill for writing Chinese math/technical derivation tutorials",
+  "description": "Copilot skill for writing Chinese math and technical derivation tutorials in structured Markdown",
+  "keywords": [
+    "copilot-skill",
+    "tutorial-writing",
+    "technical-writing",
+    "mathematics",
+    "latex",
+    "markdown",
+    "chinese"
+  ],
   "type": "module",
   "scripts": {
     "verify": "node scripts/verify-math.mjs ."
