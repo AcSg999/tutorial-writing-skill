@@ -1,6 +1,14 @@
 ---
 name: tutorial-writing-skill
 description: Write, draft, expand, or restructure long-form Chinese technical tutorials and step-by-step derivation notes (讲义／推导文档) — progressive "why do we need this step?" narrative, LaTeX display math with boxed key results, motivation callouts, runnable code, and a closing summary. Use when asked for a math / machine learning / physics / robotics derivation, lecture note, tutorial, or "详细推导" document, especially in Chinese. Markdown is the single source of truth; PDF/HTML export is an optional final build step.
+topics:
+  - tutorial-writing
+  - technical-writing
+  - mathematics
+  - machine-learning
+  - latex
+  - markdown
+  - chinese
 license: MIT
 ---
 
