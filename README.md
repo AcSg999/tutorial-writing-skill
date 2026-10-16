@@ -64,11 +64,12 @@ scripts/
 `scripts/verify-math.mjs` 会检查每个公式能否被 KaTeX（VS Code 预览的渲染器）渲染，并抓出常见跨平台问题：公式内裸中文、`$$` 内用裸 `\\` 换行、LaTeX 定界符 `\(…\)`、以及 `\newcommand`／`\ce`／`\SI`／`\href` 这类不稳定或不可用的宏。
 
 ```bash
-npm i katex
-node scripts/verify-math.mjs .          # 目录或文件均可
+npm install          # 只装一个 devDependency：katex
+npm run verify       # 等价于 node scripts/verify-math.mjs .
+node scripts/verify-math.mjs 某篇讲义.md   # 也可以只查单个文件
 ```
 
-有错误时退出码为 1，可直接接进 CI。
+有错误时退出码为 1，可直接接进 CI 或提交前钩子。
 
 ## 渲染效果
 

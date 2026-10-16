@@ -1,6 +1,5 @@
 # 依赖（校验脚本需要 katex）
 node_modules/
-package-lock.json
 
 # 导出产物：由 Markdown 生成，永不反向修改源文件
 build/

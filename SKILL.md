@@ -182,7 +182,7 @@ license: MIT
 - [ ] 被引用的公式都有 `\tag{n}`，正文按编号回指
 - [ ] 多行推导由 `aligned`／`cases` 承载，没有裸 `\\` 换行
 - [ ] 公式内的中文只在 `\text{}` 中；无 `\ce{}`／`\SI{}`／`\href{}`／`\newcommand`
-- [ ] `node scripts/verify-math.mjs .` 通过
+- [ ] `npm run verify` 通过（或 `node scripts/verify-math.mjs .`）
 - [ ] 在 VS Code 与 GitHub 预览中都无渲染错误；源文件只有 `.md`（导出物在 `build/`，`git diff` 逐行可读）
 
 ## 十一、反模式
@@ -210,4 +210,4 @@ license: MIT
 - [examples/skeleton-template.md](examples/skeleton-template.md) — 可直接复制的空骨架（含最小排版示例）
 - [examples/screenshots/](examples/screenshots/) — 该骨架的渲染效果截图（结构部分与公式部分）
 - [reference/math-and-markdown.md](reference/math-and-markdown.md) — 公式与排版细则、KaTeX／MathJax 兼容性速查、渲染自检方法
-- [scripts/verify-math.mjs](scripts/verify-math.mjs) — 公式渲染校验器（`node scripts/verify-math.mjs .`）
+- [scripts/verify-math.mjs](scripts/verify-math.mjs) — 公式渲染校验器（`npm install && npm run verify`）
