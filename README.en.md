@@ -161,10 +161,10 @@ These screenshots were rendered from the template itself with KaTeX at 1.5× sca
 
 ## Feedback and contributions
 
-Open an Issue or PR to report problems or propose additional layout rules. A minimal reproducible Markdown example is especially helpful. The source code is public, but this project uses a non-commercial license: personal, educational, research, and other non-commercial use is allowed; selling, paid delivery, and use in commercial products or services are not. Contact the copyright holder for commercial licensing.
+Open an Issue or PR to report problems or propose additional layout rules. A minimal reproducible Markdown example is especially helpful. The source code is public, but commercial use is not granted: documentation and examples use CC BY-NC 4.0, while the verifier script uses PolyForm Noncommercial 1.0.0. Contact the copyright holder for commercial licensing.
 
 ## License
 
-[Non-Commercial Source License](LICENSE)
+[License notice](LICENSE) · [CC BY-NC 4.0](LICENSE-CC-BY-NC-4.0) · [PolyForm Noncommercial 1.0.0](LICENSE-PolyForm-Noncommercial-1.0.0)
 
-This license permits viewing, copying, modifying, and sharing the project for non-commercial purposes, but does not grant commercial-use rights. Strictly speaking, it is not an OSI-defined Open Source license.
+Documentation and examples may be copied, shared, and adapted with attribution for non-commercial purposes. The code may be used non-commercially under the PolyForm Noncommercial terms. Commercial use, sale, paid-service integration, or commercial distribution requires separate written permission. Because these licenses restrict commercial use, they are not OSI-defined Open Source licenses.

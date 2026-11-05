@@ -1,46 +1,38 @@
-非商业使用许可证
+本仓库采用分组件许可（请阅读各许可证的完整条款）：
 
-版权所有 (c) 2026 zcxAcSg
+## 文档、教程和示例
 
-本项目源代码及相关文档公开发布。在遵守以下条款的前提下，特此授予你免费的、非独占的、不可转让的许可，允许你：
+以下内容采用 **Creative Commons Attribution-NonCommercial 4.0
+International（CC BY-NC 4.0）**：
 
-1. 个人学习、研究和其他非商业目的使用本项目；
-2. 复制、修改本项目；
-3. 在非商业目的下重新发布本项目或其修改版本。
+- `README.md`
+- `README.en.md`
+- `SKILL.md`
+- `reference/`
+- `examples/` 中的 Markdown、图片及其他教程素材
 
-“商业使用”包括但不限于：直接销售本项目或其衍生物、将本项目作为付费产品或服务的一部分、用于获取商业优势或金钱报酬的内部使用，以及为商业客户提供付费交付或支持。
+许可证全文：
+https://creativecommons.org/licenses/by-nc/4.0/legalcode
 
-未经版权所有者事先书面许可，不得进行任何商业使用、销售、许可、出租、转售或将本项目纳入商业产品或服务。重新发布本项目或其修改版本时，必须保留本许可证及版权声明，并明确标注修改内容。
+该许可证允许非商业使用、复制、再发布和改编，但要求适当署名，并禁止商业使用。
 
-本项目按“现状”提供，不附带任何明示或默示的保证。在适用法律允许的最大范围内，版权所有者不对因使用本项目而产生的任何索赔、损害或其他责任负责。
+## 软件代码
 
-如需商业授权，请联系版权所有者另行取得书面许可。
+以下代码采用 **PolyForm Noncommercial License 1.0.0**：
 
----
+- `scripts/verify-math.mjs`
+- `package.json` 和 `package-lock.json` 中用于运行该代码的项目配置
 
-NON-COMMERCIAL SOURCE LICENSE
+许可证全文：
+https://polyformproject.org/licenses/noncommercial/1.0.0/
 
-Copyright (c) 2026 zcxAcSg
+该许可证允许非商业使用、复制、修改和再发布，但禁止商业使用。修改或再发布时
+必须遵守该许可证的通知和保留要求。
 
-The source code and documentation of this project are publicly available. Subject
-to the terms below, you are granted a free, non-exclusive, non-transferable license
-to:
+## 商业授权
 
-1. use this project for personal, educational, research, and other non-commercial purposes;
-2. copy and modify this project; and
-3. redistribute this project or modified versions for non-commercial purposes.
+本仓库不授予商业使用权。商业使用、商业分发、付费服务集成或其他商业授权，
+请事先联系版权所有者并取得单独的书面许可。
 
-"Commercial use" includes, without limitation, selling this project or derivatives,
-including it in a paid product or service, using it to obtain commercial advantage
-or monetary compensation, or providing paid delivery or support to a commercial client.
-
-Without prior written permission from the copyright holder, you may not use, sell,
-license, rent, resell, or include this project in any commercial product or service.
-When redistributing this project or a modified version, you must retain this license
-and copyright notice and clearly identify your modifications.
-
-This project is provided "AS IS", without warranty of any kind. To the maximum extent
-permitted by applicable law, the copyright holder is not liable for any claim, damages,
-or other liability arising from the use of this project.
-
-For commercial licensing, contact the copyright holder for separate written permission.
+除上述明确授予的权利外，版权所有者保留所有权利。各许可证均按“现状”提供，
+具体权利和限制以对应许可证的正式文本为准。

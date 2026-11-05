@@ -9,7 +9,7 @@ topics:
   - latex
   - markdown
   - chinese
-license: LicenseRef-NonCommercial
+license: CC-BY-NC-4.0
 ---
 
 # 数学／技术推导讲义写作
