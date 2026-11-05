@@ -161,8 +161,10 @@ These screenshots were rendered from the template itself with KaTeX at 1.5× sca
 
 ## Feedback and contributions
 
-Open an Issue or PR to report problems or propose additional layout rules. A minimal reproducible Markdown example is especially helpful. This repository is MIT-licensed and can be forked and customized freely.
+Open an Issue or PR to report problems or propose additional layout rules. A minimal reproducible Markdown example is especially helpful. The source code is public, but this project uses a non-commercial license: personal, educational, research, and other non-commercial use is allowed; selling, paid delivery, and use in commercial products or services are not. Contact the copyright holder for commercial licensing.
 
 ## License
 
-[MIT](LICENSE)
+[Non-Commercial Source License](LICENSE)
+
+This license permits viewing, copying, modifying, and sharing the project for non-commercial purposes, but does not grant commercial-use rights. Strictly speaking, it is not an OSI-defined Open Source license.

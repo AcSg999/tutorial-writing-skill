@@ -9,7 +9,7 @@ topics:
   - latex
   - markdown
   - chinese
-license: MIT
+license: LicenseRef-NonCommercial
 ---
 
 # 数学／技术推导讲义写作
